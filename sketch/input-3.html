@@ -1,0 +1,52 @@
+<!-- 
+/*
+ * name:       input-2.html
+ * date:       2013JUL06
+ * programmer: pr
+ * source:     <processingjs.org/articles/PomaxGuide.html#jsobj>
+ * description:
+ *             integrate HTML with Javascript & Processing     
+ * 
+*/
+-->
+<!DOCTYPE html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>processing page 2</title>
+        <script type="text/javascript" 
+                src="http://127.0.0.1:8080/processing.min.js"></script>
+        <script type="text/javascript">
+            var bound = false;
+
+            function bindJavascript() {
+                var pjs = Processing.getInstanceById('urlinput-2');
+
+                if (pjs != null) {
+                    pjs.bindJavascript(this);
+                    bound = true;
+                }
+                if (!bound) {
+                    setTimeout(bindJavascript, 250);
+                }
+            } 
+
+            bindJavascript();
+
+            function showXYCoordinates(x, y) {
+                document.getElementById('xcoord').value = x;
+                document.getElementById('ycoord').value = y;
+            }
+        </script>
+</head>
+<body>
+        <div id="canvas"> 
+            <p>Canvas</p>
+            <canvas id="urlinput-2" 
+                    data-processing-sources="urlinput-2.js"></canvas>
+            <p>Co-ordinates</p>
+            <div id="coordinates">
+               X/Y: <input type="textfield" id="xcoord">/
+                    <input type="textfield" id="ycoord">     
+        </div> 
+</body>
+</html>

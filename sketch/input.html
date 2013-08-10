@@ -1,0 +1,34 @@
+<!-- 
+/*
+ * name:       leaves-4.js
+ * date:       2013JUL06
+ * programmer: pr
+ * source:     <processingjs.org/articles/PomaxGuide.html#jsobj>
+ * description:
+ *             integrate HTML with Javascript & Processing     
+ * 
+*/
+-->
+<!DOCTYPE html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>processing page</title>
+        <script type="text/javascript" src="http://peterrenshaw.neocities.org/processing.min.js"></script>
+        <script type="text/javascript">
+        function drawSomeText(id) {
+            var pjs = Processing.getInstanceById(id);
+            var text = document.getElementById('inputtext').value;
+            pjs.drawText(text);     
+        }
+        </script>
+    </head>
+    <body>
+        <div> 
+        <canvas id="urlinput-1" data-processing-sources="urlinput-1.js"></canvas>
+        <p>
+            <input type="textfield" value="" id="inputtext">
+            <button type="button" onclick="drawSomeText('urlinput-1')">place</botton>
+        </p>  
+        </div> 
+    </body>
+</html>
